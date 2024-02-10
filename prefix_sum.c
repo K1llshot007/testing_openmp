@@ -7,13 +7,13 @@
 
 int main() {
 
-    const int n = 200000000;
-    int i =0;
-    int sum[200000000];
+    const size_t n = 200000000;
+    size_t i =0;
+    size_t sum[200000000];
     srand(time(NULL));
-    int input[200000000];
+    size_t input[200000000];
     size_t x;
-    int j =0;
+    size_t j =0;
     for( j;j<n;j++){
         input[j] = rand();
     }
