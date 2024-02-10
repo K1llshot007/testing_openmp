@@ -7,11 +7,11 @@
 
 int main() {
 
-    const size_t n = 200000;
+    const size_t n = 20000;
     size_t i =0;
-    size_t sum[2000000];
+    size_t sum[20000];
     srand(time(NULL));
-    size_t input[2000000];
+    size_t input[20000];
     size_t x;
     size_t j =0;
     for( j;j<n;j++){
@@ -22,7 +22,7 @@ int main() {
     double elt = omp_get_wtime();
    
     // #pragma omp parallel for reduction(+:area)
-   while(i<2000000){
+   while(i<20000){
     i++;
     x+= input[i];
     sum[i] = x;
