@@ -7,7 +7,7 @@
 
 int main() {
 
-    const size_t n = 2000000;
+    const size_t n = 200000;
     size_t i =0;
     size_t sum[2000000];
     srand(time(NULL));
