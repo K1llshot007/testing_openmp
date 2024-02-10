@@ -21,7 +21,7 @@ int main() {
     x = input[0];
     double elt = omp_get_wtime();
    
-    #pragma omp parallel shared(input) private[sum]
+    #pragma omp parallel shared(input) private(sum)
    while(i<20000){
     i++;
     x+= input[i];
