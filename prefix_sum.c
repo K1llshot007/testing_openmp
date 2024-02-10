@@ -20,13 +20,16 @@ int main() {
     sum[0] = input[0];
     x = input[0];
     double elt = omp_get_wtime();
-   
-    #pragma omp parallel shared(input) private(sum)
+   i =1;
+    #pragma omp parallel shared(input) private(sum,i)
    while(i<20000){
-    i++;
+    
     x+= input[i];
+    #pragma omp critical
+    {
+        i++;
     sum[i] = x;
-
+    }
    }
 
 
