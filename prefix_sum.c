@@ -13,8 +13,8 @@ int main() {
     srand(time(NULL));
     int input[20000];
     size_t x;
-
-    for(int  j=0;j<n;j++){
+    int j =0;
+    for( j;j<n;j++){
         input[j] = rand();
     }
     sum[0] = input[0];
@@ -29,7 +29,7 @@ int main() {
 
    }
 
-    
+
     elt = omp_get_wtime() - elt;
 
 
@@ -38,3 +38,4 @@ int main() {
 
     return 0;
 }
+
