@@ -25,11 +25,12 @@ int main() {
    while(i<20000){
     
     x+= input[i];
-    #pragma omp critical
-    {
-        i++;
+    // #pragma omp critical
+    // {
+        
     sum[i] = x;
-    }
+    i++;
+    // }
    }
 
 
