@@ -8,8 +8,8 @@
 
 
 int main() {
-    size_t inputArray[n];
-    size_t resultArray[n];
+    size_t *inputArray = (size_t)malloc(n*sizeof(size_t));
+    size_t *resultArray = (size_t)malloc(n*sizeof(size_t));
 
 
     for (size_t i = 0; i < n; i++)
