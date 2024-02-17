@@ -4,7 +4,7 @@
 #include <time.h>
 
 
-#define n 10000000000
+#define n 2000000000
 
 
 int main() {
