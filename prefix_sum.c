@@ -4,37 +4,39 @@
 #include <time.h>
 
 
+#define n 10000000000
+
 
 int main() {
+    size_t inputArray[n];
+    size_t resultArray[n];
 
-    const size_t n = 2000000;
-    size_t i =0;
-    size_t sum[2000000];
-    srand(time(NULL));
-    size_t input[2000000];
-    size_t x;
-    size_t j =0;
-    for( j;j<n;j++){
-        input[j] = rand();
+
+    for (size_t i = 0; i < n; i++)
+    {
+        inputArray[i] = rand();
     }
-    sum[0] = input[0];
-    x = input[0];
-    double elt = omp_get_wtime();
-   i =1;
-    // #pragma omp parallel shared(input) private(sum,i)
-   while(i<20000){
+
+    size_t sum = 0;
     
-    x+= input[i];
-    // #pragma omp critical
-    // {
-        
-    sum[i] = x;
-    i++;
-    // }
-   }
+    srand(time(NULL));
+    double elt = omp_get_wtime(); //start of timer
 
 
-    elt = omp_get_wtime() - elt;
+    for (size_t i = 0; i < n; i++)
+    {
+        sum+= inputArray[i];
+
+        resultArray[i] = sum;
+
+    }
+    
+
+
+
+
+
+    elt = omp_get_wtime() - elt; // stop of timer
 
 
     printf("Time taken: %.3lf seconds\n", elt);
