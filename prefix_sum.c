@@ -12,35 +12,50 @@ void computePrefixSum(size_t* input, size_t* output){
     size_t *tempArray = malloc(numThreads*sizeof(size_t)); // Used for parallel section
     size_t sum = 0;
     size_t x =0;
-    #pragma omp parallel shared(input, output) 
+    #pragma omp parallel 
     {
-        for (size_t i = x*divisionOfLabor; i < (x+1)*divisionOfLabor; i++){
+
+        #pragma omp single
+        {
+            int nthr = omp_get_num_threads();
+
+        }
+        int tid = omp_get_thread_num();
+
+
+
+
+        #pragma omp for schedule(static)
+        for (size_t i = 0; i < n; i++){
                 sum+= input[i];
 
                 output[i] = sum;
                 
-                x++;
+                
         }
+        tempArray[tid+1] = sum;
+        #pragma omp barrier
 
-    }
-
-    for(int i =1; i <= numThreads; i++){
-            tempArray[i-1] = output[i*divisionOfLabor -1];
-    }
-
-
-    #pragma omp parallel for
-    for (size_t i = 1; i < numThreads; i++)
-    {
-        for (size_t x = 0; x < divisionOfLabor; x++)
+        for (size_t i = 0; i < (tid+1); i++)
         {
-            output[i*divisionOfLabor + x] += tempArray[i];
+            x += tempArray[i];
         }
+         
+
+        #pragma omp for schedule(static)
+        for (size_t i = 0; i < n; i++)
+        {
+            output[i] += x ;
+        }
+        
+
         
     }
     free(tempArray);
 
 }
+
+
 
 
 
