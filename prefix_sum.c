@@ -7,11 +7,11 @@
 
 int main() {
 
-    const size_t n = 20000;
+    const size_t n = 2000000;
     size_t i =0;
-    size_t sum[20000];
+    size_t sum[2000000];
     srand(time(NULL));
-    size_t input[20000];
+    size_t input[2000000];
     size_t x;
     size_t j =0;
     for( j;j<n;j++){
@@ -21,7 +21,7 @@ int main() {
     x = input[0];
     double elt = omp_get_wtime();
    i =1;
-    #pragma omp parallel shared(input) private(sum,i)
+    // #pragma omp parallel shared(input) private(sum,i)
    while(i<20000){
     
     x+= input[i];
