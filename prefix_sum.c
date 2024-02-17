@@ -53,7 +53,7 @@ int main() {
         inputArray[i] = rand();
     }
 
-    size_t sum = 0;
+    // size_t sum = 0;
     
     srand(time(NULL));
     double elt = omp_get_wtime(); //start of timer
