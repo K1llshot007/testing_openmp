@@ -36,7 +36,7 @@ void computePrefixSum(size_t* input, size_t* output){
         tempArray[tid+1] = sum;
         #pragma omp barrier
 
-        for (size_t i = 0; i < (tid+1); i++)
+        for (int i = 0; i < (tid+1); i++)
         {
             x += tempArray[i];
         }
