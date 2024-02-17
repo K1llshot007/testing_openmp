@@ -67,7 +67,7 @@ int main() {
 
     // }
 
-    computePrefixSum(&inputArray, &resultArray);
+    computePrefixSum(inputArray, resultArray);
     
 
 
