@@ -62,6 +62,7 @@ void computePrefixSum(size_t* input, size_t* output){
 int main() {
     size_t *inputArray = malloc(n*sizeof(size_t));
     size_t *resultArray = malloc(n*sizeof(size_t));
+    srand(time(NULL));
 
     for (size_t i = 0; i < n; i++)
     {
@@ -70,7 +71,6 @@ int main() {
 
     // size_t sum = 0;
     
-    srand(time(NULL));
     double elt = omp_get_wtime(); //start of timer
 
     // #pragma omp parallel for reduction (+:sum)
