@@ -22,7 +22,7 @@ int main() {
     srand(time(NULL));
     double elt = omp_get_wtime(); //start of timer
 
-    #pragma omp parallel for reduction (+:sum)
+    // #pragma omp parallel for reduction (+:sum)
     for (size_t i = 0; i < n; i++)
     {
         sum+= inputArray[i];
