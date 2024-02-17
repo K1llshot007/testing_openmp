@@ -9,7 +9,7 @@
 
 void computePrefixSum(size_t* input, size_t* output){
     size_t divisionOfLabor = n/numThreads;
-    size_t *tempArray = malloc(numThreads*sizeof(size_t)); // Used for parallel section
+    size_t *tempArray = malloc((numThreads+1)*sizeof(size_t)); // Used for parallel section
     size_t sum = 0;
     size_t x =0;
     #pragma omp parallel 
