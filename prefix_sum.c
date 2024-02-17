@@ -42,5 +42,8 @@ int main() {
     printf("Time taken: %.3lf seconds\n", elt);
     printf("Performance rate: %.3lf GFLOPS\n", (6.0 * n * 1e-9)/elt);
 
+
+    free(inputArray);
+    free(resultArray);
     return 0;
 }
