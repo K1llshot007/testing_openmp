@@ -40,7 +40,7 @@ void freeDictionary(Dictionary *dict) {
 
 int main() {
     Dictionary *adict = createDictionary();
-    unsigned long long y[] = {15643218756522212151512611312ULL};
+    unsigned long long y[] = {156432187551512611312ULL};
     int ySize = 1; // Dynamic in Python, static here for demonstration
     int count = 1;
  double elt = omp_get_wtime();
