@@ -47,8 +47,8 @@ int main() {
     #pragma omp parallel for
     for (int i = 0; i < ySize; i++) {
         unsigned long long x = y[i];
-        unsigned long long squaredMod = (x*x) % (1ULL << 36);
-        unsigned long long squaredModPlusOne = (squaredMod + 1) % (1ULL << 36);
+        unsigned long long squaredMod = (x*x) % (1ULL << 56);
+        unsigned long long squaredModPlusOne = (squaredMod + 1) % (1ULL << 56);
 
         // Check and add squaredMod to the dictionary
         // This operation must be thread-safe
